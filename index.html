@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Preventivo Auto - GestImm Evo 81</title>
+  <title>Preventivi Assicurativi - GestImm Evo 81</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -18,17 +18,17 @@
     }
     .container {
       background: white;
-      margin-top: 40px;
+      margin: 40px auto;
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       width: 100%;
-      max-width: 600px;
+      max-width: 700px;
     }
-    h1 {
+    h1, h2 {
       text-align: center;
       color: #b30000;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     label {
       display: block;
@@ -38,6 +38,7 @@
     input[type="text"],
     input[type="email"],
     input[type="tel"],
+    input[type="number"],
     select,
     textarea {
       width: 100%;
@@ -80,66 +81,77 @@
     button:hover {
       background: #800000;
     }
+    hr {
+      margin: 40px 0;
+      border: 0;
+      height: 1px;
+      background: #ddd;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Richiesta Preventivo Auto</h1>
+    <h1>Richiesta Preventivo</h1>
+    
+    <!-- AUTO -->
+    <h2>Auto</h2>
     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <label for="nome">Nome e Cognome</label>
-      <input type="text" id="nome" name="nome" required />
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="telefono">Telefono</label>
-      <input type="tel" id="telefono" name="telefono" required />
-
-      <label for="targa">Targa veicolo</label>
-      <input type="text" id="targa" name="targa" required />
-
-      <label for="contraente">Indirizzo Contraente</label>
-      <input type="text" id="contraente" name="indirizzo_contraente" required />
-
-      <label for="proprietario">Indirizzo Proprietario</label>
-      <input type="text" id="proprietario" name="indirizzo_proprietario" />
-
-      <label>
-        <input type="checkbox" name="coincidenza" />
-        Contraente e proprietario coincidono
-      </label>
-
-      <label for="guida">Tipo di guida</label>
-      <select name="guida" id="guida">
-        <option value="esclusiva">Esclusiva</option>
-        <option value="libera">Libera</option>
-        <option value="esperta">Esperta</option>
+      <label>Nome e Cognome</label><input type="text" name="nome_auto" required>
+      <label>Email</label><input type="email" name="email_auto" required>
+      <label>Telefono</label><input type="tel" name="telefono_auto" required>
+      <label>Targa veicolo</label><input type="text" name="targa" required>
+      <label>Indirizzo Contraente</label><input type="text" name="indirizzo_contraente" required>
+      <label>Indirizzo Proprietario</label><input type="text" name="indirizzo_proprietario">
+      <label><input type="checkbox" name="coincidenza"> Contraente e proprietario coincidono</label>
+      <label>Tipo di guida</label>
+      <select name="guida">
+        <option>Esclusiva</option><option>Libera</option><option>Esperta</option>
       </select>
-
       <label>Garanzie aggiuntive</label>
       <div class="checkbox-group">
-        <label><input type="checkbox" name="garanzie[]" value="Furto e Incendio">Furto e Incendio</label>
-        <label><input type="checkbox" name="garanzie[]" value="Cristalli">Cristalli</label>
-        <label><input type="checkbox" name="garanzie[]" value="Eventi naturali">Eventi naturali</label>
-        <label><input type="checkbox" name="garanzie[]" value="Atti vandalici">Atti vandalici</label>
-        <label><input type="checkbox" name="garanzie[]" value="Tutela legale">Tutela legale</label>
-        <label><input type="checkbox" name="garanzie[]" value="Assistenza stradale">Assistenza stradale</label>
-        <label><input type="checkbox" name="garanzie[]" value="Kasko totale">Kasko totale</label>
-        <label><input type="checkbox" name="garanzie[]" value="Kasko parziale">Kasko parziale</label>
+        <label><input type="checkbox" name="garanzie_auto[]" value="Furto e Incendio">Furto e Incendio</label>
+        <label><input type="checkbox" name="garanzie_auto[]" value="Cristalli">Cristalli</label>
+        <label><input type="checkbox" name="garanzie_auto[]" value="Eventi naturali">Eventi naturali</label>
+        <label><input type="checkbox" name="garanzie_auto[]" value="Atti vandalici">Atti vandalici</label>
+        <label><input type="checkbox" name="garanzie_auto[]" value="Tutela legale">Tutela legale</label>
+        <label><input type="checkbox" name="garanzie_auto[]" value="Assistenza stradale">Assistenza stradale</label>
+        <label><input type="checkbox" name="garanzie_auto[]" value="Kasko totale">Kasko totale</label>
+        <label><input type="checkbox" name="garanzie_auto[]" value="Kasko parziale">Kasko parziale</label>
       </div>
-
-      <label for="frazionamento">Frazionamento</label>
+      <label>Frazionamento</label>
       <select name="frazionamento">
-        <option>Annuale</option>
-        <option>Semestrale</option>
-        <option>Trimestrale</option>
-        <option>Mensile</option>
+        <option>Annuale</option><option>Semestrale</option><option>Trimestrale</option><option>Mensile</option>
       </select>
+      <label>Note</label><textarea name="note_auto" rows="3"></textarea>
+      <hr>
 
-      <label for="note">Note aggiuntive</label>
-      <textarea id="note" name="note" rows="4"></textarea>
+      <!-- DANNI -->
+      <h2>Polizza Casa / Danni</h2>
+      <label>Tipo immobile</label><input type="text" name="tipo_immobile">
+      <label>Indirizzo</label><input type="text" name="indirizzo_immobile">
+      <label>Superficie (mq)</label><input type="number" name="mq">
+      <label>Valore contenuto stimato (€)</label><input type="number" name="valore_contenuto">
+      <label>Coperture richieste</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="coperture[]" value="Incendio">Incendio</label>
+        <label><input type="checkbox" name="coperture[]" value="RC familiare">RC familiare</label>
+        <label><input type="checkbox" name="coperture[]" value="Allagamenti">Allagamenti</label>
+        <label><input type="checkbox" name="coperture[]" value="Terremoto">Terremoto (CatNat)</label>
+      </div>
+      <label>Note</label><textarea name="note_danni" rows="3"></textarea>
+      <hr>
 
-      <button type="submit">Invia Richiesta</button>
+      <!-- VITA -->
+      <h2>Polizza Vita</h2>
+      <label>Età</label><input type="number" name="eta">
+      <label>Fumatore</label>
+      <select name="fumatore"><option>Sì</option><option>No</option></select>
+      <label>Capitale assicurato desiderato (€)</label><input type="number" name="capitale">
+      <label>Durata (anni)</label><input type="number" name="durata">
+      <label>Finalità</label><input type="text" name="finalita">
+      <label>Note</label><textarea name="note_vita" rows="3"></textarea>
+
+      <button type="submit">Invia Preventivo</button>
     </form>
   </div>
 </body>
