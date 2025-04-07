@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Preventivo Polizze - GestImm Evo 81</title>
+</head>
+<body>
+  <h1>Modulo Assicurazioni - Auto</h1>
+  <form action="https://formspree.io/f/YOUR_AUTO_FORM" method="POST">
+    <label>Targa:</label><input type="text" name="targa" required><br>
+    <label>Nome Contraente:</label><input type="text" name="contraente" required><br>
+    <label>Indirizzo Contraente:</label><input type="text" name="indirizzo_contraente" required><br>
+    <label>Nome Proprietario:</label><input type="text" name="proprietario"><br>
+    <label>Indirizzo Proprietario:</label><input type="text" name="indirizzo_proprietario"><br>
+    <label><input type="checkbox" name="coincidenza"> Contraente e Proprietario coincidono</label><br>
+    <label>Tipo guida:</label>
+    <select name="guida">
+      <option>Esclusiva</option><option>Libera</option><option>Esperta</option>
+    </select><br>
+    <label>Uso del veicolo:</label>
+    <select name="uso">
+      <option>Privato</option><option>Promiscuo</option><option>Professionale</option>
+    </select><br>
+    <label>Classe CU:</label><input type="text" name="classe"><br>
+    <label>Garanzie aggiuntive:</label><br>
+    <select name="garanzie[]" multiple>
+      <option>Furto & Incendio</option><option>Cristalli</option><option>Eventi naturali</option>
+      <option>Atti vandalici</option><option>Tutela legale</option><option>Assistenza stradale</option>
+      <option>Kasko totale</option><option>Kasko parziale</option>
+    </select><br>
+    <label>Frazionamento:</label>
+    <select name="frazionamento">
+      <option>Annuale</option><option>Semestrale</option><option>Trimestrale</option><option>Mensile</option>
+    </select><br>
+    <label>Note:</label><textarea name="note"></textarea><br>
+    <button type="submit">Invia richiesta</button>
+  </form>
+
+  <h2>Ramo Danni / Casa / CatNat</h2>
+  <form action="https://formspree.io/f/YOUR_DANNI_FORM" method="POST">
+    <label>Tipo immobile:</label><input type="text" name="tipo"><br>
+    <label>Indirizzo:</label><input type="text" name="indirizzo"><br>
+    <label>Superficie mq:</label><input type="number" name="mq"><br>
+    <label>Valore contenuto stimato:</label><input type="number" name="valore"><br>
+    <label>Richiesta per:</label><br>
+    <input type="checkbox" name="copertura" value="Incendio">Incendio<br>
+    <input type="checkbox" name="copertura" value="RC">RC familiare<br>
+    <input type="checkbox" name="copertura" value="Allagamenti">Allagamenti<br>
+    <input type="checkbox" name="copertura" value="Catnat">Terremoto (CatNat)<br>
+    <button type="submit">Invia richiesta</button>
+  </form>
+
+  <h2>Ramo Vita</h2>
+  <form action="https://formspree.io/f/YOUR_VITA_FORM" method="POST">
+    <label>Età:</label><input type="number" name="eta"><br>
+    <label>Fumatore:</label><select name="fumatore"><option>Sì</option><option>No</option></select><br>
+    <label>Capitale desiderato:</label><input type="number" name="capitale"><br>
+    <label>Durata:</label><input type="number" name="durata"><br>
+    <label>Finalità:</label><input type="text" name="finalita"><br>
+    <button type="submit">Invia richiesta</button>
+  </form>
+</body>
+</html>
