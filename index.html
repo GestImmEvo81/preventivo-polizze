@@ -35,7 +35,11 @@
       margin-top: 20px;
       font-weight: 600;
     }
-    input, select, textarea {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
       width: 100%;
       padding: 12px;
       margin-top: 5px;
@@ -45,6 +49,21 @@
     }
     textarea {
       resize: vertical;
+    }
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: #f2f2f2;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-weight: normal;
     }
     button {
       margin-top: 30px;
@@ -97,17 +116,17 @@
         <option value="esperta">Esperta</option>
       </select>
 
-      <label for="garanzie">Garanzie aggiuntive</label>
-      <select multiple name="garanzie[]">
-        <option>Furto e Incendio</option>
-        <option>Cristalli</option>
-        <option>Eventi naturali</option>
-        <option>Atti vandalici</option>
-        <option>Tutela legale</option>
-        <option>Assistenza stradale</option>
-        <option>Kasko totale</option>
-        <option>Kasko parziale</option>
-      </select>
+      <label>Garanzie aggiuntive</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="garanzie[]" value="Furto e Incendio">Furto e Incendio</label>
+        <label><input type="checkbox" name="garanzie[]" value="Cristalli">Cristalli</label>
+        <label><input type="checkbox" name="garanzie[]" value="Eventi naturali">Eventi naturali</label>
+        <label><input type="checkbox" name="garanzie[]" value="Atti vandalici">Atti vandalici</label>
+        <label><input type="checkbox" name="garanzie[]" value="Tutela legale">Tutela legale</label>
+        <label><input type="checkbox" name="garanzie[]" value="Assistenza stradale">Assistenza stradale</label>
+        <label><input type="checkbox" name="garanzie[]" value="Kasko totale">Kasko totale</label>
+        <label><input type="checkbox" name="garanzie[]" value="Kasko parziale">Kasko parziale</label>
+      </div>
 
       <label for="frazionamento">Frazionamento</label>
       <select name="frazionamento">
